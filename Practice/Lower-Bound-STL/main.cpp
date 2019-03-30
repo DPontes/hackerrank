@@ -24,13 +24,9 @@ int main() {
    
     for (int i = 0; i < n_queries; i++) {
         cin >> query;
-        low = lower_bound(v.begin(), v.end(), query);
-        if(find(v.begin(), v.end(), query) != v.end()) {
-            cout << "Yes ";
-        } else {
-            cout << "No ";
-        }
-        cout << (low - v.begin() + 1) << endl;
+        low = lower_bound(v.begin(), v.end(), query) + 1;
+        find(v.begin(), v.end(), query) != v.end() ? cout << "Yes " : cout << "No ";
+        cout << (low - v.begin()) << endl;
     }
     return 0;
 }
