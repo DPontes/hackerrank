@@ -8,25 +8,21 @@ using namespace std;
 
 
 int main() {
-    int n_integers, n_queries, query;
+    int n_integers, query, value;
     vector<int> v;
 
     cin >> n_integers;
 
-    for(int i = 0; i<n_integers;i++) {
-        int value;
+    for(int i = 0; i < n_integers; i++) {
         cin >> value;
         v.push_back(value);
     }
 
-    cin >> n_queries;
-    vector<int>::iterator low;
+    cin >> query;
    
-    for (int i = 0; i < n_queries; i++) {
-        cin >> query;
-        low = lower_bound(v.begin(), v.end(), query) + 1;
+    while(cin >> query) {
         find(v.begin(), v.end(), query) != v.end() ? cout << "Yes " : cout << "No ";
-        cout << (low - v.begin()) << endl;
+        cout << (lower_bound(v.begin(), v.end(), query) + 1 - v.begin()) << endl;
     }
     return 0;
 }
