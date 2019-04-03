@@ -8,7 +8,7 @@ using namespace std;
 
 
 int main() {
-    int n_integers, query, value;
+    int n_integers, query, value, place;
     vector<int> v;
 
     cin >> n_integers;
@@ -21,8 +21,9 @@ int main() {
     cin >> query;
    
     while(cin >> query) {
-        find(v.begin(), v.end(), query) != v.end() ? cout << "Yes " : cout << "No ";
-        cout << (lower_bound(v.begin(), v.end(), query) + 1 - v.begin()) << endl;
+        place = lower_bound(v.begin(), v.end(), query) + 1 - v.begin();
+        v[place - 1] == query ? cout << "Yes " : cout << "No ";
+        cout << place << endl;
     }
     return 0;
 }
