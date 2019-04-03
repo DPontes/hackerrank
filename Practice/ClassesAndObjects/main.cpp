@@ -6,7 +6,19 @@
 #include <cassert>
 using namespace std;
 
-// Write solution here
+class Student {
+    private:
+        int scores;
+    public:
+        void input() {
+            int value;
+            for(int i = 0; i < 5; i++) {
+                cin >> value;
+                scores += value;
+            }
+        }
+        int calculateTotalScore() { return scores; }
+};
 
 int main() {
     int n;
