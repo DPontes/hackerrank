@@ -1,2 +1,7 @@
 **.sw*
 **.out
+cmake_install.cmake
+CMakeFiles/
+CMakeCache.txt
+runTests
+Makefile
