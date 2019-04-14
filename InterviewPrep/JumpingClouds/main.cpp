@@ -8,7 +8,7 @@ int jumpingOnClouds(vector<int> c) {
     int jumps = 0;
     int it = 0;
     while(it != (c.size()-1)) {
-        if( c[it+2] == 0 ) it += 2;
+        if( c[it+2] == 0 && it+2 <= (c.size() - 1)) it += 2;
         else it += 1;
         jumps++;
     }
