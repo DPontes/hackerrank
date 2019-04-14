@@ -3,7 +3,15 @@
 using namespace std;
 
 long repeatedString(string s, long n) {
-    
+    long occur = 0;
+    char item = 'a';
+    if( n % s.size() == 0) occur = (n / s.size()) * count(s.begin(), s.end(), item);
+    else {
+        occur = (n / s.size()) * count(s.begin(), s.end(), item);
+        int extra =  n % s.size();
+        occur += count(s.begin(), s.begin() + extra, item);
+    }
+    return occur;
 }
 
 int main () {
@@ -18,7 +26,7 @@ int main () {
 
     long result = repeatedString(s, n);
     cout << result << endl;
-    fout.close()
+    fout.close();
 
     return 0;
 }
