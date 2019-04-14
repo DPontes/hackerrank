@@ -12,3 +12,7 @@ or
 ```bash
 > ./run.out < input2.txt (expected result: `3`)
 ```
+or
+```bash
+> ./run.out < input3.txt (expected result: `1`)
+```
