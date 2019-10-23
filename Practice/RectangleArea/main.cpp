@@ -4,21 +4,21 @@ using namespace std;
 
 class Rectangle {
     public:
-        int width;
-        int height;
-        void display() {
+        virtual void display() const {
             cout << width << " " << height << endl;
         }
+    protected:
+        int width;
+        int height;
 };
 
 class RectangleArea : public Rectangle {
     public:
         void read_input() {
-            cin >> width;
-            cin >> height;
+            cin >> width >> height;
         }
-        void display() {
-            cout << width * height;
+        void display() const override {
+            cout << width * height << endl;
         }
 };
 
