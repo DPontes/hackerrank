@@ -14,12 +14,8 @@ class Rectangle {
 
 class RectangleArea : public Rectangle {
  public:
-    void read_input() {
-        cin >> width >> height;
-    }
-    void display() const override {
-        cout << width * height << endl;
-    }
+    void read_input() { cin >> width >> height; }
+    void display() const override { cout << width * height << endl; }
 };
 
 int main() {
