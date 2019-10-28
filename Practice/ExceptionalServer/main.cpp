@@ -10,7 +10,7 @@ class Server {
  private:
     static int load;
  public:
-    static int compute(uint64_t A, uint64_t B) {
+    static int compute(int64_t A, int64_t B) {
         load += 1;
         if (A < 0) { throw std::invalid_argument("A is negative"); }
         vector<int> v(A, 0);
@@ -33,7 +33,18 @@ int main() {
         uint64_t A, B;
         cin >> A >> B;
 
-        /* Enter code here */
+        try {
+            cout << Server::compute(A, B) << endl;
+        }
+        catch (bad_alloc& error) {
+            cout << "Not enough memory" << endl;
+        }
+        catch (exception& error) {
+            cout << "Exception: " << error.what() << endl;
+        }
+        catch (...) {
+            cout << "Other exception" << endl;
+        }
     }
 
     cout << Server::getLoad() << endl;
