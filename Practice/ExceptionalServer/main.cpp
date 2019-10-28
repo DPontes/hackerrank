@@ -30,7 +30,7 @@ int Server::load = 0;
 int main() {
     int T; cin >> T;
     while (T--) {
-        uint64_t A, B;
+        int64_t A, B;
         cin >> A >> B;
 
         try {

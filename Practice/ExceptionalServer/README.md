@@ -19,6 +19,8 @@ Not enough memory
 
 ## Notes on the challenge
 
+*Due to changes in the C++ compilers from Hackerrank, the presented and discussed code ONLY works with the first given input, all other TCs will fail due to another exception appearing that `catch (...)` doen't handle.*
+
 In the `try` block we just have the call to use the `compute(A,B)` function and to print the result. Since this is a `static` function, we don't need to create any objects of type `Server`, we can call it directly instead.
 If there is something wrong with the inputs, then executing this function will throw out the relevant exception. As the problem states, we need to be able to handle 3 different scenarios:
 
