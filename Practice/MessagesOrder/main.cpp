@@ -5,16 +5,26 @@
 using namespace std;
 
 class Message {
+ private:
+    string text;
+    static int id;
+    int current_id;
  public:
-    Message() {}
-    const string& get_text() {
+    Message() { current_id = ++id; }
+    explicit Message(string t) {current_id = ++id; text = t; }
+    const string& get_text() { return text; }
+    // overloaded < operator
+    bool operator< (const Message& M2) {
+        return (current_id < M2.current_id) ? true : false;
     }
 };
+int Message::id = 0;
 
 class MessageFactory {
  public:
     MessageFactory() {}
     Message create_message(const string& text) {
+        Message m = Message(text); return m;
     }
 };
 
@@ -27,7 +37,7 @@ class Recipient {
         for (auto& msg : messages_) {
             cout << msg.get_text() << endl;
         }
-        messages_clear();
+        messages_.clear();
     }
  private:
     void fix_order() { sort(messages_.begin(), messages_.end()); }
